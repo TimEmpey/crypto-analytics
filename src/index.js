@@ -90,6 +90,14 @@ function printElements(response, intervals, num) {
     } else {
       p2.setAttribute("class", "positive");
     }
+
+    let p7 = document.createElement("p");
+    p7.innerText = "Status: " + cryptoOutput.status;
+    if (num === 1) {
+      document.getElementById("outputs").appendChild(p7);
+    } else {
+      document.getElementById("outputs2").appendChild(p7);
+    }
   });
 }
 
