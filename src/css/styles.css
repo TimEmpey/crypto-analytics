@@ -3,8 +3,46 @@ h3 {
 }
 .outputs {
   text-align: center;
+  margin-left: 30%;
+  margin-right: 5%;
+}
+
+.outputs2 {
+  text-align: center;
+  margin-right: 30%;
+  margin-left: 5%;
 }
 
 body {
   background-color: rgb(172, 240, 172)
+}
+
+.popular-form {
+  background-color: white;
+  margin-left: 30%;
+  margin-right: 5%;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.alt-form {
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 30%;
+  margin-left: 5%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.positive {
+  color: blue
+}
+
+.negative {
+  color: red;
+}
+
+img{
+  width: 30%;
 }
