@@ -4,6 +4,70 @@
   <title></title>
 </head>
 <body>
+  <div class="row">
+    <div class="col-5">
+      <h3>Popular</h3>
+      <form id="token-select">
+        <input type="checkbox" id="coin1" name="coin1" value="BTC">
+        <label for="coin1"> Bitcoin </label><br>
+        <input type="checkbox" id="coin2" name="coin2" value="ETH">
+        <label for="coin2"> Ethereum </label><br>
+        <input type="checkbox" id="coin3" name="coin3" value="ADA">
+        <label for="coin3"> Cardano </label><br>
+        <input type="checkbox" id="coin4" name="coin4" value="DOGE">
+        <label for="coin4"> Doge </label><br>
+        <input type="checkbox" id="coin5" name="coin5" value="USDT">
+        <label for="coin5"> Tether </label><br><br>
+
+        <select name="intervals" id="intervals">
+          <option value="1d">1 Day</option>
+          <option value="7d">1 Week</option>
+          <option value="30d">1 Month</option>
+          <option value="365d">1 Year</option>
+          <option value="ytd">Year to Date</option>
+        </select>
+        <button class="btn-success" type="submit" value="Submit" form="token-select">Submit</button><br>
+      </form>
+    </div>
+    <div class="col-2">
+      
+    </div>
+    <div class="col-5">
+      <h3>Alt. Coins</h3>
+      <form id="alt-select">
+        <select name="alt" id="alt">
+          <option value="Select">--Select--</option>
+          <option value="XRP">XRP</option>
+          <option value="SOL">Solano</option>
+          <option value="DOT">Polkadot</option>
+          <option value="MATIC">Polygon</option>
+        </select>
+        <label for="alt">Select Crypto</label><br>
+        <select name="intervals2" id="intervals2">
+          <option value="1d">1 Day</option>
+          <option value="7d">1 Week</option>
+          <option value="30d">1 Month</option>
+          <option value="365d">1 Year</option>
+          <option value="ytd">Year to Date</option>
+        </select>
+        <button class="btn-primary" type="submit" value="Submit" form="alt-select">Submit</button><br>
+      </form>
+<!--make a dropdown with other coins
+    when they start the page, it will show the first 5ish instantly
+    then we make a dropdown form that when they click a coin on there, it will show up -->
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="outputs" id="outputs"></div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+      <div class="outputs2" id="outputs2"></div>
+    </div>
+  </div>
 
 </body>
 </html>

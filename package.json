@@ -1,5 +1,5 @@
 {
-  "name": "TEMPLATE",
+  "name": "crypto-analytics",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,6 +23,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
+    "dotenv-webpack": "^2.0.0",
     "eslint": "^8.18.0",
     "eslint-webpack-plugin": "^2.7.0",
     "file-loader": "^6.2.0",
