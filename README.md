@@ -1,38 +1,43 @@
-# _Template_
+# CryptoCurrency Tracker
 
-#### By _**Tim Empey**_
+#### By Tim Empey & Joseph Jackson
 
-#### _Quicken file creation process_
+#### Github Pages
+__
+
+#### Crypto data engine
 
 ## Technologies Used
 
-* _JavaScript_
-* _HTML_
-* _CSS_
-* _Bootstrap_
-*_Webpack_
-*_Jest_
-*_Babel_
-*_ES Lint_
+* JavaScript
+* HTML
+* CSS
+* Bootstrap
+*Webpack
+*Jest
+*Babel
+*ES Lint
 
 ## Description
 
-_Template repo to streamline the file setup process for JS webpages with all files set up and ready for use_
+Webpage allows user to search for cryptocurrency data from the top 40 currencies separated by popularity and alt. coins, data such as current price, all time high, market cap, etc. will be displayed
 
 ## Setup/Installation Requirements
 
-* _Installing all packages with $ npm install._
-* _Building the project using webpack with $ npm run build_
-* _Starting a development server with $ npm run start_
-* _Linting JS files in the src folder with $ npm run lint_
-* _Running tests with Jest using $ npm run test_
+* Download the repository: https://github.com/TimEmpey/crypto-analytics.git
+* Sign up for an api key from nomics at https://p.nomics.com/cryptocurrency-bitcoin-api
+* _Create a .env file in the root directory and type in "API_KEY=your key".
+* Install all packages with $ npm install.
+* Install npm install dotenv-webpack@2.0.0 --save-dev
+* Build the project using webpack with $ npm run build
+* Start a development server with $ npm run start
 
 ## Known Bugs
 
-* _No known bugs_
+* No known bugs
 
 ## License
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_ 
 
-Copyright (c) _2022_ _Timothy Empey_
+Copyright (c) 2022 _Timothy Empey & Joseph Jackson_
