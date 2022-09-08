@@ -1,22 +1,21 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import TokenService from './getToken.js';
 
 //Business Logic
-function getToken(ids, intervals, num) {
-  let request = new XMLHttpRequest();
-  const url = `https://api.nomics.com/v1/currencies/ticker?key=${process.env.API_KEY}&ids=${ids}&intervals=${intervals}`;
-  
-  request.addEventListener("loadend", function() {
-    const response = JSON.parse(this.responseText);
-    if (this.status === 200) {
-      printElements(response, intervals, num);
-    }
-  });
-  request.open("GET", url, true);
-  request.send();
+function getToken(ids, intervals, num, emptyError) {
+  if (emptyError === 0) {
+    TokenService.getToken(ids, intervals)
+      .then(function(response) {
+        if(response.length > 0) {
+          printElements(response, ids, num);
+        }  else {
+          printError(response, ids);
+        }
+      });
+  }
 }
-
 
 //User Logic
 function printElements(response, intervals, num) {
@@ -101,6 +100,12 @@ function printElements(response, intervals, num) {
   });
 }
 
+function printError(error, ids) {
+  document.querySelector('#showResponse').innerText = `There was an error accessing the Crypto Data for ${ids}: 
+  ${error}.`;
+}
+
+
 function handleForm(e) {
   e.preventDefault();
   let outputs = document.getElementById("outputs");
@@ -108,10 +113,15 @@ function handleForm(e) {
   let idsArray = [];
   let ids = document.querySelectorAll("input[type=checkbox]:checked");
   let intervals = document.getElementById("intervals").value;
+  let emptyError = 0;
+  if (ids.length === 0) {
+    emptyError = 1;
+  }
   for (let i = 0; i < ids.length; i++) {
     idsArray.push(ids[i].value);
   }
-  getToken(idsArray, intervals, 1);
+  getToken(idsArray, intervals, 1,  emptyError);
+  //getToken(idsArray, intervals, 1, emptyError);
 }
 
 function handleForm2(e) {
@@ -120,11 +130,10 @@ function handleForm2(e) {
   outputs.innerHTML = null;
   let intervals = document.getElementById("intervals2").value;
   let altId = document.querySelector("select#alt").value;
-  getToken(altId, intervals, 2);
+  getToken(altId, intervals, 2, 0);
 }
 
 window.addEventListener("load", function() {
   document.querySelector("form#token-select").addEventListener("submit", handleForm);
   document.querySelector("form#alt-select").addEventListener("submit", handleForm2);
 });
-// function to take the GET and output it to html
