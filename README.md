@@ -5,7 +5,7 @@
 #### Github Pages
 __
 
-#### Crypto data engine
+#### _Crypto search engine_
 
 ## Technologies Used
 
