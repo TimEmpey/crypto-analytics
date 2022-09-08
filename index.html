@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crypto Analyzer</title>
+</head>
+<body>
+  <div class="top-row">
+    <div class="row">
+      <div class="container">
+        <h1>Crypto Analyzer</h1>
+        <a href="https://p.nomics.com/pricing">Click Here to Get Your API</a>
+        <form id="apiSearch">
+          <label for="apiInput">Key</label>
+          <input id="apiInput" type="text" name="apiInput">
+
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="popular-form">
+          <h3>Popular</h3>
+          <form id="token-select">
+            <input type="checkbox" id="coin1" name="coin1" value="BTC">
+            <label for="coin1"> Bitcoin </label><br>
+            <input type="checkbox" id="coin2" name="coin2" value="ETH">
+            <label for="coin2"> Ethereum </label><br>
+            <input type="checkbox" id="coin3" name="coin3" value="ADA">
+            <label for="coin3"> Cardano </label><br>
+            <input type="checkbox" id="coin4" name="coin4" value="DOGE">
+            <label for="coin4"> Doge </label><br>
+            <input type="checkbox" id="coin5" name="coin5" value="USDT">
+            <label for="coin5"> Tether </label><br><br>
+
+            <select name="intervals" id="intervals">
+              <option value="1d">1 Day</option>
+              <option value="7d">1 Week</option>
+              <option value="30d">1 Month</option>
+              <option value="365d">1 Year</option>
+              <option value="ytd">Year to Date</option>
+            </select>
+            <button class="btn-success" type="submit" value="Submit" form="token-select">Submit</button><br>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="alt-form">
+          <h3>Alt. Coins</h3>
+          <form id="alt-select"><br><br>
+            <select name="alt" id="alt">
+              <option value="Select">--Select--</option>
+              <option value="XRP">XRP</option>
+              <option value="SOL">Solano</option>
+              <option value="DOT">Polkadot</option>
+              <option value="MATIC">Polygon</option>
+              <option value="BNB">Binance Coin</option>
+              <option value="BUSD">Binance USD</option>
+              <option value="SHIB">Shiba Inu</option>
+              <option value="STETH">Liquid Staked Ether</option>
+              <option value="DAI">Dai</option>
+              <option value="TRON">Tron</option>
+              <option value="AVAX">Avalance</option>
+              <option value="HEX">Hex</option>
+              <option value="ETC">Ethereum Classic</option>
+              <option value="WBTC">Wrapped Bitcoin</option>
+              <option value="FTT">FTX Token</option>
+              <option value="LEO">UNUS SED LEO</option>
+              <option value="LTC">Litecoin</option>
+              <option value="ATOM">Cosmos</option>
+              <option value="OKB">OKEx Utility Token</option>
+              <option value="LINK">ChainLink</option>
+              <option value="NEAR">Near Protocol</option>
+              <option value="LUNC">Terra Luna Classic</option>
+              <option value="UNI">Uniswap Protocol Token</option>
+              <option value="CRO">Cronos</option>
+              <option value="CRV">Curve DAO Token</option>
+              <option value="HBTC">Huoby BTC</option>
+              <option value="DFI">DeFiChain</option>
+              <option value="TIME">TIME (Wonderland)</option>
+              <option value="GT">Gatechain Token</option>
+              <option value="CAKE">Pancakeswap</option>
+              <option value="PAXG">PAX Gold</option>
+              <option value="RUNE">THORChain</option>
+              <option value="CEL">Celsius</option>
+              <option value="ENJ">Enjin Coin</option>
+              <option value="ZIL">Zilliqa</option>
+              <option value="NEXO">Nexo</option>
+              <option value="DASH">Dash</option>
+              <option value="BAT">Basic Attention Token</option>
+              <option value="AR">Arweave</option>
+              <option value="CUSDT">Compound USDT</option>
+              <option value="STX">Stacks</option>
+              <option value="LRC">Loopring</option>
+              <option value="FXS">Frax Share</option>
+              <option value="WAVES">Waves</option>
+              <option value="MINA">Mina Protocol</option>
+              <option value="NEO">NEO</option>
+            </select>
+            <label for="alt" class="alt-interval-select">Select Crypto</label><br><br><br><br>
+            <select name="intervals2" id="intervals2">
+              <option value="1d">1 Day</option>
+              <option value="7d">1 Week</option>
+              <option value="30d">1 Month</option>
+              <option value="365d">1 Year</option>
+              <option value="ytd">Year to Date</option>
+            </select>
+            <button class="btn-primary" type="submit" value="Submit" form="alt-select">Submit</button><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="outputs" id="outputs">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="outputs2" id="outputs2"></div>
+    </div>
+  </div>
+  <div class="error-output" id="error-output"></div>
+<script src="bundle.js"></script></body>
+</html>
