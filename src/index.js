@@ -4,9 +4,9 @@ import './css/styles.css';
 import TokenService from './getToken.js';
 
 //Business Logic
-function getToken(ids, intervals, num, emptyError) {
+function getToken(ids, intervals, num, emptyError, key) {
   if (emptyError === 0) {
-    TokenService.getToken(ids, intervals)
+    TokenService.getToken(ids, intervals, key)
       .then(function(response) {
         if(response.length > 0) {
           printElements(response, ids, num);
@@ -101,13 +101,19 @@ function printElements(response, intervals, num) {
 }
 
 function printError(error, ids) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the Crypto Data for ${ids}: 
-  ${error}.`;
+  let outputs = document.getElementById("outputs");
+  outputs.innerHTML = null;
+  let outputs2 = document.getElementById("outputs2");
+  outputs2.innerHTML = null;
+  let errorText = document.createElement("p");
+  errorText.innerText = `There was an error accessing the Data for ${ids}: ${error}`;
+  document.getElementById("error-output").appendChild(errorText);
 }
-
 
 function handleForm(e) {
   e.preventDefault();
+  let errorOutput = document.getElementById("error-output");
+  errorOutput.innerHTML = null;
   let outputs = document.getElementById("outputs");
   outputs.innerHTML = null;
   let idsArray = [];
@@ -120,17 +126,20 @@ function handleForm(e) {
   for (let i = 0; i < ids.length; i++) {
     idsArray.push(ids[i].value);
   }
-  getToken(idsArray, intervals, 1,  emptyError);
-  //getToken(idsArray, intervals, 1, emptyError);
+  let key = document.getElementById("apiInput").value;
+  getToken(idsArray, intervals, 1,  emptyError, key);
 }
 
 function handleForm2(e) {
   e.preventDefault();
   let outputs = document.getElementById("outputs2");
+  let errorOutput = document.getElementById("error-output");
+  errorOutput.innerHTML = null;
   outputs.innerHTML = null;
   let intervals = document.getElementById("intervals2").value;
   let altId = document.querySelector("select#alt").value;
-  getToken(altId, intervals, 2, 0);
+  let key = document.getElementById("apiInput").value;
+  getToken(altId, intervals, 2, 0, key);
 }
 
 window.addEventListener("load", function() {

@@ -8,10 +8,32 @@ h3 {
   color: white;
 }
 
+.container {
+  text-align: center;
+  color: white;
+  background-color: #36393f;
+  padding-bottom: 10px;
+  width: 69%;
+  border-radius: 10px;
+  border: solid green;
+  border: width 4px;
+}
+
+a {
+  color: white;
+}
+
 .outputs2 {
   text-align: center;
   margin-right: 30%;
   margin-left: 5%;
+  color: white;
+}
+
+.error-output {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
   color: white;
 }
 
@@ -21,10 +43,11 @@ body {
 
 .top-row {
   width: 110%;
-  height: 400px;
+  height: 470px;
   background: url('https://images-ext-1.discordapp.net/external/6ANMObd5gRc7dO0px2fvhwn2jrY_8gGP8bJ0iWKAmlg/%3Fauto%3Dcompress%26cs%3Dtinysrgb%26w%3D1600/https/images.pexels.com/photos/210607/pexels-photo-210607.jpeg?width=1029&height=686');
   background-size: cover;
   border-bottom: solid rgb(178, 178, 178);
+  color: white
 }
 
 .popular-form {

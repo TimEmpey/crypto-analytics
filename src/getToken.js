@@ -1,7 +1,7 @@
 
 export default class TokenService {
-  static getToken(ids, intervals) {
-    return fetch(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.API_KEY}&ids=${ids}&intervals=${intervals}`)
+  static getToken(ids, intervals, key) {
+    return fetch(`https://api.nomics.com/v1/currencies/ticker?key=${key}&ids=${ids}&intervals=${intervals}`)
       .then(function(response) {
         if (!response.ok) {
           const errorMessage = `${response.status} ${response.statusText}`;
